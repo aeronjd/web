@@ -837,16 +837,8 @@ const quotes = [
 ========================================= */
 
 function sleep(ms) {
-
     return new Promise(
-        function (resolve) {
-
-            setTimeout(
-                resolve,
-                ms
-            );
-
-        }
+        resolve => setTimeout(resolve, ms)
     );
 }
 
@@ -1528,7 +1520,9 @@ terminalInput.addEventListener(
 
         }
 
-
+        else if (command === "void") {
+    runVoidEvent();
+}
 
         /* UNKNOWN */
 
@@ -1590,6 +1584,471 @@ IMPORTANT:
 Your HTML already begins with Apocalypse,
 so we manually load Apocalypse's LRC here.
 */
+// =========================
+// SECRET VOID EVENT
+// =========================
+// =========================
+// SECRET VOID EVENTS
+// =========================
+
+let voidCount = 0;
+let voidRunning = false;
+
+
+async function runVoidEvent() {
+
+    if (voidRunning) return;
+
+    voidRunning = true;
+    voidCount++;
+
+    let eventNumber = voidCount;
+
+    // After 5 uses, randomly choose an event
+    if (eventNumber > 5) {
+        eventNumber =
+            Math.floor(Math.random() * 5) + 1;
+    }
+
+
+    if (eventNumber === 1) {
+        await voidSignalLost();
+    }
+
+    else if (eventNumber === 2) {
+        await voidCorruption();
+    }
+
+    else if (eventNumber === 3) {
+        await voidBlackout();
+    }
+
+    else if (eventNumber === 4) {
+        await voidCrash();
+    }
+
+    else if (eventNumber === 5) {
+        await voidRemember();
+    }
+
+
+    voidRunning = false;
+
+    terminalScreen.scrollTop =
+        terminalScreen.scrollHeight;
+
+    terminalInput.focus();
+}
+
+
+/* =========================
+   VOID #1
+   SIGNAL LOST
+========================= */
+
+async function voidSignalLost() {
+
+    let line =
+        newLine("system-text");
+
+    await typeText(
+        line,
+        "accessing /dev/void...",
+        25
+    );
+
+    await sleep(300);
+
+
+    line =
+        newLine("error-text");
+
+    await typeText(
+        line,
+        "signal lost.",
+        30
+    );
+
+    await sleep(200);
+
+
+    document.body.classList.add(
+        "void-event"
+    );
+
+
+    const warning =
+        createVoidWarning(
+            "SIGNAL LOST"
+        );
+
+
+    await sleep(700);
+
+    warning.textContent =
+        "ERR_0x000VOID";
+
+
+    await sleep(700);
+
+    warning.textContent =
+        "RECONNECTING...";
+
+
+    await sleep(700);
+
+
+    document.body.classList.remove(
+        "void-event"
+    );
+
+    warning.remove();
+
+
+    line =
+        newLine("system-text");
+
+    await typeText(
+        line,
+        "connection restored.",
+        25
+    );
+}
+
+
+/* =========================
+   VOID #2
+   CORRUPTION
+========================= */
+
+async function voidCorruption() {
+
+    let line =
+        newLine("error-text");
+
+
+    await typeText(
+        line,
+        "something followed you back.",
+        30
+    );
+
+
+    await sleep(300);
+
+
+    document.body.classList.add(
+        "void-corruption"
+    );
+
+
+    const warning =
+        createVoidWarning(
+            "C0RRUPT10N"
+        );
+
+
+    const messages = [
+        "C0RRUPT10N",
+        "V0ID://ERROR",
+        "##@!01XZ",
+        "MEMORY???",
+        "D0_N0T_L00K"
+    ];
+
+
+    for (let i = 0; i < 12; i++) {
+
+        warning.textContent =
+            messages[
+                Math.floor(
+                    Math.random() *
+                    messages.length
+                )
+            ];
+
+
+        await sleep(150);
+
+    }
+
+
+    document.body.classList.remove(
+        "void-corruption"
+    );
+
+    warning.remove();
+
+
+    line =
+        newLine("system-text");
+
+
+    await typeText(
+        line,
+        "corruption contained.",
+        30
+    );
+}
+
+
+/* =========================
+   VOID #3
+   BLACKOUT
+========================= */
+
+async function voidBlackout() {
+
+    let line =
+        newLine("system-text");
+
+
+    await typeText(
+        line,
+        "hello?",
+        60
+    );
+
+
+    await sleep(400);
+
+
+    const blackout =
+        document.createElement("div");
+
+
+    blackout.className =
+        "void-blackout";
+
+
+    blackout.innerHTML =
+        '<div id="blackout-message"></div>';
+
+
+    document.body.appendChild(
+        blackout
+    );
+
+
+    const message =
+        blackout.querySelector(
+            "#blackout-message"
+        );
+
+
+    await sleep(500);
+
+
+    message.textContent =
+        "ARE YOU STILL THERE?";
+
+
+    await sleep(900);
+
+
+    message.textContent =
+        "";
+
+
+    await sleep(250);
+
+
+    message.textContent =
+        "I CAN SEE YOU.";
+
+
+    await sleep(800);
+
+
+    blackout.classList.add(
+        "blackout-end"
+    );
+
+
+    await sleep(250);
+
+
+    blackout.remove();
+
+
+    line =
+        newLine("quote-text");
+
+
+    await typeText(
+        line,
+        "...",
+        150
+    );
+}
+
+
+/* =========================
+   VOID #4
+   FAKE CRASH
+========================= */
+
+async function voidCrash() {
+
+    let line =
+        newLine("error-text");
+
+
+    await typeText(
+        line,
+        "FATAL_SYSTEM_ERROR",
+        25
+    );
+
+
+    await sleep(250);
+
+
+    document.body.classList.add(
+        "void-crash"
+    );
+
+
+    const warning =
+        createVoidWarning(
+            "FATAL ERROR"
+        );
+
+
+    await sleep(450);
+
+    warning.textContent =
+        "MEMORY CORRUPTION";
+
+
+    await sleep(450);
+
+    warning.textContent =
+        "/dev/void OVERFLOW";
+
+
+    await sleep(450);
+
+    warning.textContent =
+        "PROCESS 0000 TERMINATED";
+
+
+    await sleep(450);
+
+    warning.textContent =
+        "REBOOTING...";
+
+
+    await sleep(600);
+
+
+    document.body.classList.remove(
+        "void-crash"
+    );
+
+    warning.remove();
+
+
+    line =
+        newLine("system-text");
+
+
+    await typeText(
+        line,
+        "system recovered.",
+        30
+    );
+}
+
+
+/* =========================
+   VOID #5
+   IT REMEMBERS
+========================= */
+
+async function voidRemember() {
+
+    const darkness =
+        document.createElement("div");
+
+
+    darkness.className =
+        "void-remember";
+
+
+    darkness.innerHTML =
+        `
+        <div class="remember-text">
+            IT REMEMBERS YOU.
+        </div>
+        `;
+
+
+    document.body.appendChild(
+        darkness
+    );
+
+
+    await sleep(700);
+
+
+    darkness.classList.add(
+        "remember-visible"
+    );
+
+
+    await sleep(1400);
+
+
+    darkness.classList.remove(
+        "remember-visible"
+    );
+
+
+    await sleep(400);
+
+
+    darkness.remove();
+
+
+    const line =
+        newLine("quote-text");
+
+
+    await typeText(
+        line,
+        "don't come back.",
+        60
+    );
+}
+
+
+/* =========================
+   CREATE WARNING
+========================= */
+
+function createVoidWarning(text) {
+
+    const warning =
+        document.createElement("div");
+
+
+    warning.className =
+        "void-warning";
+
+
+    warning.textContent =
+        text;
+
+
+    document.body.appendChild(
+        warning
+    );
+
+
+    return warning;
+}
+
 
 loadLyrics(
     playlist[currentSong].lyrics
@@ -1641,4 +2100,571 @@ terminalMinimize.addEventListener(
         }
 
     }
+);
+
+
+/* =========================================
+   MOVIE QUOTES
+========================================= */
+
+const movieQuotes = [
+
+/* MORE BETTER CALL SAUL */
+
+{
+    quote: "Let's get down to brass tacks.",
+    source: "Better Call Saul",
+    year: "2015"
+},
+
+{
+    quote: "Justice matters most.",
+    source: "Better Call Saul",
+    year: "2015"
+},
+
+{
+    quote: "The law is sacred.",
+    source: "Better Call Saul",
+    year: "2015"
+},
+
+
+/* BREAKING BAD */
+
+{
+    quote: "Tread lightly.",
+    source: "Breaking Bad",
+    year: "2008"
+},
+
+{
+    quote: "Say my name.",
+    source: "Breaking Bad",
+    year: "2008"
+},
+
+{
+    quote: "No more half measures.",
+    source: "Breaking Bad",
+    year: "2008"
+},
+
+
+/* THE SOPRANOS */
+
+{
+    quote: "Remember when is the lowest form of conversation.",
+    source: "The Sopranos",
+    year: "1999"
+},
+
+{
+    quote: "Those who want respect, give respect.",
+    source: "The Sopranos",
+    year: "1999"
+},
+
+
+/* MR. ROBOT */
+
+{
+    quote: "Control is an illusion.",
+    source: "Mr. Robot",
+    year: "2015"
+},
+
+{
+    quote: "Hello, friend.",
+    source: "Mr. Robot",
+    year: "2015"
+},
+
+
+/* TRUE DETECTIVE */
+
+{
+    quote: "Time is a flat circle.",
+    source: "True Detective",
+    year: "2014"
+},
+
+
+/* BOJACK HORSEMAN */
+
+{
+    quote: "It gets easier.",
+    source: "BoJack Horseman",
+    year: "2014"
+},
+
+
+/* THE OFFICE */
+
+{
+    quote: "I'm not superstitious, but I am a little stitious.",
+    source: "The Office",
+    year: "2005"
+},
+
+
+/* SUCCESSION */
+
+{
+    quote: "You are not serious people.",
+    source: "Succession",
+    year: "2018"
+},
+
+
+/* GAME OF THRONES */
+
+{
+    quote: "Chaos isn't a pit. Chaos is a ladder.",
+    source: "Game of Thrones",
+    year: "2011"
+},
+
+{
+    quote: "Not today.",
+    source: "Game of Thrones",
+    year: "2011"
+},
+
+
+/* THE MATRIX */
+
+{
+    quote: "There is no spoon.",
+    source: "The Matrix",
+    year: "1999"
+},
+
+{
+    quote: "Wake up, Neo.",
+    source: "The Matrix",
+    year: "1999"
+},
+
+
+/* FIGHT CLUB */
+
+{
+    quote: "This is your life.",
+    source: "Fight Club",
+    year: "1999"
+},
+
+{
+    quote: "You are not your job.",
+    source: "Fight Club",
+    year: "1999"
+},
+
+
+/* BLADE RUNNER */
+
+{
+    quote: "It's too bad she won't live.",
+    source: "Blade Runner",
+    year: "1982"
+},
+
+
+/* BLADE RUNNER 2049 */
+
+{
+    quote: "You look lonely.",
+    source: "Blade Runner 2049",
+    year: "2017"
+},
+
+{
+    quote: "You look like a good Joe.",
+    source: "Blade Runner 2049",
+    year: "2017"
+},
+
+
+/* INTERSTELLAR */
+
+{
+    quote: "Love is the one thing we're capable of perceiving.",
+    source: "Interstellar",
+    year: "2014"
+},
+
+
+/* INCEPTION */
+
+{
+    quote: "An idea is like a virus.",
+    source: "Inception",
+    year: "2010"
+},
+
+{
+    quote: "You mustn't be afraid to dream a little bigger.",
+    source: "Inception",
+    year: "2010"
+},
+
+
+/* THE DARK KNIGHT */
+
+{
+    quote: "Why so serious?",
+    source: "The Dark Knight",
+    year: "2008"
+},
+
+{
+    quote: "Some men just want to watch the world burn.",
+    source: "The Dark Knight",
+    year: "2008"
+},
+
+
+/* BATMAN BEGINS */
+
+{
+    quote: "Why do we fall?",
+    source: "Batman Begins",
+    year: "2005"
+},
+
+
+/* TAXI DRIVER */
+
+{
+    quote: "You talkin' to me?",
+    source: "Taxi Driver",
+    year: "1976"
+},
+
+
+/* AMERICAN PSYCHO */
+
+{
+    quote: "I have to return some videotapes.",
+    source: "American Psycho",
+    year: "2000"
+},
+
+
+/* THE TRUMAN SHOW */
+
+{
+    quote: "Good morning!",
+    source: "The Truman Show",
+    year: "1998"
+},
+
+
+/* NO COUNTRY FOR OLD MEN */
+
+{
+    quote: "Call it.",
+    source: "No Country for Old Men",
+    year: "2007"
+},
+
+
+/* THE GODFATHER */
+
+{
+    quote: "I'm gonna make him an offer he can't refuse.",
+    source: "The Godfather",
+    year: "1972"
+},
+
+
+/* SCARFACE */
+
+{
+    quote: "Say hello to my little friend!",
+    source: "Scarface",
+    year: "1983"
+},
+
+
+/* GOODFELLAS */
+
+{
+    quote: "Funny how?",
+    source: "Goodfellas",
+    year: "1990"
+},
+
+
+/* PULP FICTION */
+
+{
+    quote: "Royale with Cheese.",
+    source: "Pulp Fiction",
+    year: "1994"
+},
+
+
+/* THE SHAWSHANK REDEMPTION */
+
+{
+    quote: "Get busy living, or get busy dying.",
+    source: "The Shawshank Redemption",
+    year: "1994"
+},
+
+
+/* TERMINATOR 2 */
+
+{
+    quote: "Hasta la vista, baby.",
+    source: "Terminator 2",
+    year: "1991"
+},
+
+
+/* ALIEN */
+
+{
+    quote: "In space, no one can hear you scream.",
+    source: "Alien",
+    year: "1979"
+},
+
+
+/* 2001 */
+
+{
+    quote: "I'm sorry, Dave.",
+    source: "2001: A Space Odyssey",
+    year: "1968"
+},
+
+
+/* DONNIE DARKO */
+
+{
+    quote: "Why are you wearing that stupid man suit?",
+    source: "Donnie Darko",
+    year: "2001"
+},
+
+
+/* WHIPLASH */
+
+{
+    quote: "Not quite my tempo.",
+    source: "Whiplash",
+    year: "2014"
+},
+
+
+/* NIGHTCRAWLER */
+
+{
+    quote: "What if my problem wasn't that I don't understand people?",
+    source: "Nightcrawler",
+    year: "2014"
+},
+
+
+/* THE SOCIAL NETWORK */
+
+{
+    quote: "A million dollars isn't cool.",
+    source: "The Social Network",
+    year: "2010"
+},
+
+
+/* DEAD POETS SOCIETY */
+
+{
+    quote: "Carpe diem. Seize the day.",
+    source: "Dead Poets Society",
+    year: "1989"
+},
+
+
+/* BACK TO THE FUTURE */
+
+{
+    quote: "Great Scott!",
+    source: "Back to the Future",
+    year: "1985"
+},
+
+
+/* STAR WARS */
+
+{
+    quote: "Do. Or do not. There is no try.",
+    source: "The Empire Strikes Back",
+    year: "1980"
+},
+
+
+/* LORD OF THE RINGS */
+
+{
+    quote: "You shall not pass!",
+    source: "The Fellowship of the Ring",
+    year: "2001"
+},
+
+
+/* THE SHINING */
+
+{
+    quote: "Here's Johnny!",
+    source: "The Shining",
+    year: "1980"
+},
+
+
+/* JOKER */
+
+{
+    quote: "Is it just me, or is it getting crazier out there?",
+    source: "Joker",
+    year: "2019"
+}
+
+];
+
+
+const movieQuoteText =
+    document.getElementById(
+        "movie-quote-text"
+    );
+
+
+const movieInfo =
+    document.getElementById(
+        "movie-info"
+    );
+
+
+const newQuoteButton =
+    document.getElementById(
+        "new-quote"
+    );
+
+
+async function randomMovieQuote() {
+
+    const random =
+        Math.floor(
+            Math.random() *
+            movieQuotes.length
+        );
+
+    const selected =
+        movieQuotes[random];
+
+
+    /* HIDE MOVIE TITLE FIRST */
+
+    movieInfo.classList.remove(
+        "movie-info-show"
+    );
+
+    movieInfo.textContent = "";
+
+
+    /* CHARACTERS USED FOR GLITCH */
+
+    const glitchCharacters =
+        "#@%&!?01XZ";
+
+
+    const finalText =
+        '"' + selected.quote + '"';
+
+
+    /* SCRAMBLE */
+
+    for (
+        let frame = 0;
+        frame < 8;
+        frame++
+    ) {
+
+        let scrambled = "";
+
+
+        for (
+            let i = 0;
+            i < finalText.length;
+            i++
+        ) {
+
+            if (finalText[i] === " ") {
+
+                scrambled += " ";
+
+            }
+
+            else {
+
+                scrambled +=
+                    glitchCharacters[
+                        Math.floor(
+                            Math.random() *
+                            glitchCharacters.length
+                        )
+                    ];
+
+            }
+
+        }
+
+
+        movieQuoteText.textContent =
+            scrambled;
+
+
+        await sleep(35);
+
+    }
+
+
+    /* REVEAL REAL QUOTE */
+
+    movieQuoteText.textContent =
+        finalText;
+
+
+    /* SMALL DELAY */
+
+    await sleep(250);
+
+
+    /* REVEAL MOVIE */
+
+    movieInfo.textContent =
+        "— " +
+        selected.source +
+        " // " +
+        selected.year;
+
+
+    movieInfo.classList.add(
+        "movie-info-show"
+    );
+
+}
+
+
+/* RANDOM QUOTE WHEN PAGE OPENS */
+
+randomMovieQuote();
+
+
+/* NEW QUOTE BUTTON */
+
+newQuoteButton.addEventListener(
+    "click",
+    randomMovieQuote
 );
