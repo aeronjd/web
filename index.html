@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Rene Portfolio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h2>Akong Portfolio</h2>
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#projects">Projects</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="portfolio">
+
+
+        <!-- =========================
+             LEFT PROFILE
+        ========================== -->
+
+        <aside class="profile">
+
+
+            <!-- PROFILE PICTURE -->
+
+            <div class="profile-picture">
+
+                <img src="1.gif" alt="Profile Picture">
+
+            </div>
+
+
+<h1 class="void-glitch" data-text="void">
+    void
+</h1>
+
+
+            <p class="username">
+                Rene B
+            </p>
+
+
+            <p class="bio">
+                <i>
+                    there is nothing but void...
+                </i>
+            </p>
+
+
+            <br>
+
+            <hr>
+
+
+            <!-- SOCIALS -->
+
+            <div class="socials">
+
+
+                <a
+                    target="_blank"
+                    href="https://github.com/voidcynicism">
+
+                    <i class="fa-brands fa-github"></i>
+
+                    voidcynicism
+
+                </a>
+
+
+                <a
+                    target="_blank"
+                    href="https://www.facebook.com/">
+
+                    <i class="fa-brands fa-facebook"></i>
+
+                    reneB
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 MUSIC PLAYER
+            ========================== -->
+
+            <section class="music-section">
+
+
+<div class="now-playing-row">
+
+    <p class="now-playing">
+        NOW PLAYING
+    </p>
+
+    <div class="visualizer" id="visualizer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+
+
+                <div class="music-card">
+
+
+                    <!-- ALBUM -->
+
+                    <img
+                        src="cgr.jpg"
+                        class="album-cover"
+                        id="album-cover"
+                        alt="Album Cover">
+
+
+
+                    <!-- SONG INFORMATION -->
+
+                    <div class="song-info">
+
+
+                        <h3 id="song-title">
+                            Apocalypse
+                        </h3>
+
+
+                        <p
+                            class="artist"
+                            id="song-artist">
+
+                            Cigarettes After Sex
+
+                        </p>
+
+
+
+                        <!-- PROGRESS BAR -->
+
+                        <div
+                            class="progress"
+                            id="progress">
+
+                            <div
+                                class="progress-bar"
+                                id="progress-bar">
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- TIME -->
+
+                        <div class="song-time">
+
+                            <span id="current-time">
+                                0:00
+                            </span>
+
+                            <span id="duration">
+                                0:00
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- PLAY -->
+
+                    <button
+                        class="play-button"
+                        id="play-button"
+                        type="button">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </button>
+
+
+                </div>
+
+
+<!-- CURRENT LYRIC -->
+
+<div class="lyric-box">
+
+    <p id="music-lyric">
+        loading lyrics...
+    </p>
+
+</div>
+                <!-- AUDIO -->
+
+                <audio id="music" loop>
+
+                    <source
+                        src="apocal.mp3"
+                        type="audio/mpeg">
+
+                </audio>
+
+
+            </section>
+
+
+        </aside>
+
+
+
+        <!-- =========================
+             RIGHT CONTENT
+        ========================== -->
+
+        <div class="content">
+
+
+            <!-- HOME -->
+
+            <section id="home">
+<div class="ascii-box">
+    <pre>
+ ソ リ ヌ 
+⠀⠀⠀⠀⠀⠀⢀⡴⢲⡄⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⡞⠀⠀⡇⠀⢀⡴フ⠁⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣸⠁⠀⠀⡇⣠⠟⠀⠀⠀⣼⣠⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⠀⢠⢤⡿⠃⣀⠀⢀⡞⠉⠁タ⠈⠙⠶⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀ホ⣰⡏⣼⢁⡴⠋⣰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠹⡄⣀⡀⠀⠀⠀⠀
+⠀⠀⠀⢀⡾⠋⠉⠁⠀⠙⠁⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡈⢷⠀⠀⠀⠀
+⠀⠀⠀⣼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⢀⣧⡾⠁⠀⠀⠀
+⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⣾⠃⠀⠀⠀⠀⠀
+⠀⠀⠀⣹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⠀⡀⠀⠀⢰⡾⠋⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢻⡇⣀⡀⠀⠺零⠇⠀⣀⣤⣄⣀⣠⣬⣥⣤⠾⠛⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠉⠛⠓⠂⠤⠤⠖⠊⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+   タヘワシロクナエヒ01ア101零00ヌ11影01ケ10月00ソ龍11ミ無01ラ
+
+ ヌFF:0A:7C:91:無:影
+    </pre>
+</div>
+
+
+                <h3 class="hello">
+                    
+                </h3>
+
+
+                <p>
+                    I am a student learning programming.
+                </p>
+
+
+                <p>
+                    This is my simple webpage.
+                </p>
+
+
+            </section>
+
+
+
+            <!-- ABOUT -->
+
+            <section id="about">
+
+
+                <h2>
+                    Me
+                </h2>
+
+
+                <p>
+                    I am interested in programming
+                    and computers.
+                </p>
+
+
+                <p>
+                    I am still learning and improving
+                    my skills in different programming
+                    languages.
+                </p>
+
+
+            </section>
+
+
+
+            <!-- SKILLS -->
+
+            <section id="skills">
+
+
+                <h2>
+                    Skills
+                </h2>
+
+
+                <ul>
+
+                    <li>Basic Programming</li>
+
+                </ul>
+
+
+            </section>
+
+
+
+            <!-- PROJECTS -->
+
+            <section id="projects">
+
+
+                <h2>
+                    Projects
+                </h2>
+
+
+
+                <div class="project">
+
+
+                    <h3>
+                        Personal Website
+                    </h3>
+
+
+                    <p>
+                        A basic website that I created
+                        while learning HTML, CSS and
+                        JavaScript.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="project">
+
+
+                    <h3>
+                        Registration Form
+                    </h3>
+
+
+                    <p>
+                        A basic registration form that
+                        I created while learning HTML
+                        and CSS.
+                    </p>
+
+
+                    <a
+                        target="_blank"
+                        href="form.html">
+
+                        <button>
+                            Registration Form
+                        </button>
+
+                    </a>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         FLOATING TERMINAL
+    ====================================== -->
+
+    <section class="terminal-section">
+
+
+        <!-- TERMINAL HEADER -->
+
+        <div class="terminal-header">
+
+
+            <div class="terminal-title">
+
+                <span class="terminal-dot"></span>
+
+                <span>
+                    void@rene
+                </span>
+
+            </div>
+
+
+            <span>
+                terminal
+            </span>
+
+
+        </div>
+
+
+
+        <!-- TERMINAL SCREEN -->
+
+        <div
+            class="terminal-screen"
+            id="terminal-screen">
+
+
+            <!-- TERMINAL OUTPUT -->
+
+            <div id="terminal-output"></div>
+
+
+
+            <!-- TERMINAL INPUT -->
+
+            <div
+                class="terminal-input-line"
+                id="input-line">
+
+
+                <span class="terminal-prompt">
+                    void@rene:~$
+                </span>
+
+
+                <input
+                    type="text"
+                    id="terminal-input"
+                    autocomplete="off"
+                    spellcheck="false">
+
+
+                <span class="terminal-cursor">
+                    █
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

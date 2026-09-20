@@ -1,0 +1,1500 @@
+/* =========================
+   WHOLE PAGE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background-color: #181818;
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    color: #ddd;
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+    background-color: #222;
+
+    border-bottom: 1px solid #444;
+
+    padding: 15px 30px;
+
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+header h2 {
+
+    margin: 0;
+
+    font-size: 20px;
+}
+
+
+
+/* =========================
+   NAV
+========================= */
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin-left: 20px;
+}
+
+
+nav a:hover {
+
+    color: #5ee68a;
+}
+
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.portfolio {
+
+    display: flex;
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+
+    gap: 40px;
+}
+
+
+
+/* =========================
+   LEFT PROFILE
+========================= */
+
+.profile {
+
+    width: 280px;
+
+    flex-shrink: 0;
+}
+
+
+
+/* =========================
+   PROFILE PICTURE
+========================= */
+
+.profile-picture {
+
+    width: 200px;
+
+    height: 200px;
+
+
+    border: 2px solid #444;
+
+    border-radius: 50%;
+
+
+    overflow: hidden;
+}
+
+
+.profile-picture img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.profile h1 {
+
+    margin-bottom: 5px;
+}
+
+
+.username {
+
+    color: #999;
+
+    margin-top: 0;
+}
+
+
+.bio {
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+
+.profile hr {
+
+    opacity: 0.2;
+
+    border: none;
+
+    border-top: 1px solid #aaa;
+}
+
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.socials {
+
+    margin-top: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+.socials a {
+
+    display: block;
+
+
+    color: #ddd;
+
+    text-decoration: none;
+
+
+    margin: 10px 0;
+
+    font-size: 14px;
+}
+
+
+.socials a:hover {
+
+    color: #5ee68a;
+}
+
+
+.socials i {
+
+    width: 25px;
+}
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+
+/* =========================
+   CONTENT SECTIONS
+========================= */
+
+.content section {
+
+    background-color: #242424;
+
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+}
+
+
+.content section h2 {
+
+    color: #5ee68a;
+
+    margin-top: 0;
+}
+
+
+.hello {
+
+    color: #ff6868;
+
+    margin-top: 0;
+}
+
+
+p {
+
+    line-height: 1.6;
+}
+
+
+li {
+
+    margin: 7px 0;
+}
+
+
+
+/* =========================
+   PROJECT
+========================= */
+
+.project {
+
+    border: 1px solid #444;
+
+    border-radius: 6px;
+
+
+    padding: 15px;
+
+    margin-top: 15px;
+}
+
+
+.project h3 {
+
+    margin-top: 0;
+
+    color: #eee;
+}
+
+
+
+/* =========================
+   PROJECT BUTTON
+========================= */
+
+.project button {
+
+    background-color: #5ee68a;
+
+    color: #181818;
+
+
+    border: none;
+
+    border-radius: 4px;
+
+
+    padding: 10px 16px;
+
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.project button:hover {
+
+    background-color: white;
+}
+
+
+
+/* =====================================
+   MUSIC PLAYER
+===================================== */
+
+.music-section {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+
+    background-color: #202020;
+
+
+    border: 1px solid #333;
+
+    border-radius: 6px;
+}
+
+
+
+/* NOW PLAYING */
+
+.now-playing {
+
+    color: #666;
+
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+}
+
+
+
+/* MUSIC ROW */
+
+.music-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+
+/* ALBUM COVER */
+
+.album-cover {
+
+    width: 65px;
+
+    height: 65px;
+
+
+    object-fit: cover;
+
+
+    border-radius: 4px;
+
+
+    filter:
+        grayscale(30%)
+        brightness(0.8);
+
+
+    transition: 0.3s;
+}
+
+
+.music-section:hover .album-cover {
+
+    filter:
+        grayscale(0%)
+        brightness(1);
+}
+
+
+
+/* SONG INFO */
+
+.song-info {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.song-info h3 {
+
+    margin: 0 0 4px 0;
+
+
+    color: #eee;
+
+    font-size: 13px;
+
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.artist {
+
+    color: #777;
+
+
+    font-size: 10px;
+
+
+    margin: 0 0 10px 0;
+
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+
+    width: 100%;
+
+    height: 3px;
+
+
+    background-color: #444;
+
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+
+    cursor: pointer;
+}
+
+
+.progress-bar {
+
+    width: 0%;
+
+    height: 100%;
+
+
+    background-color: #5ee68a;
+
+
+    border-radius: 10px;
+}
+
+
+
+/* =========================
+   SONG TIME
+========================= */
+
+.song-time {
+
+    display: flex;
+
+    justify-content: space-between;
+
+
+    margin-top: 5px;
+
+
+    color: #666;
+
+    font-size: 8px;
+}
+
+
+
+/* =========================
+   PLAY BUTTON
+========================= */
+
+.play-button {
+
+    width: 34px;
+
+    height: 34px;
+
+
+    padding: 0;
+
+
+    border: 1px solid #444;
+
+    border-radius: 50%;
+
+
+    background-color: #181818;
+
+    color: #ddd;
+
+
+    cursor: pointer;
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    flex-shrink: 0;
+
+
+    font-size: 10px;
+}
+
+
+.play-button:hover {
+
+    background-color: #5ee68a;
+
+    color: #181818;
+
+    border-color: #5ee68a;
+}
+
+
+
+/* =====================================
+   FLOATING TERMINAL
+===================================== */
+
+.terminal-section {
+
+    /*
+        THIS MAKES IT FLOAT.
+
+        It stays in the same place
+        even when the page scrolls.
+    */
+
+    position: fixed;
+
+
+    right: 25px;
+
+    bottom: 25px;
+
+
+    width: 450px;
+
+
+    padding: 0;
+
+
+    background-color: #0c0f0d;
+
+
+    border: 1px solid #303530;
+
+    border-radius: 7px;
+
+
+    overflow: hidden;
+
+
+    z-index: 1000;
+
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.55);
+}
+
+
+
+/* =====================================
+   TERMINAL HEADER
+===================================== */
+
+.terminal-header {
+
+    background-color: #191c1a;
+
+
+    padding: 9px 12px;
+
+
+    border-bottom: 1px solid #303530;
+
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+
+    font-family:
+        "Courier New",
+        monospace;
+
+
+    font-size: 10px;
+
+
+    color: #626a63;
+}
+
+
+
+/* LEFT TERMINAL TITLE */
+
+.terminal-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+
+/* SMALL GREEN STATUS DOT */
+
+.terminal-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+
+    background-color: #5ee68a;
+
+
+    border-radius: 50%;
+
+
+    box-shadow:
+        0 0 6px
+        rgba(94, 230, 138, 0.6);
+}
+
+.ascii-box {
+    color: #5ee68a;
+    opacity: 0.6;
+    overflow-x: auto;
+}
+
+.ascii-box pre {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* =====================================
+   TERMINAL SCREEN
+===================================== */
+
+.terminal-screen {
+
+    padding: 17px;
+
+
+    height: 250px;
+
+
+    overflow-y: auto;
+
+
+    font-family:
+        "Courier New",
+        monospace;
+
+
+    font-size: 15px;
+
+
+    color: #a8b5a8;
+
+
+    cursor: text;
+
+
+    text-shadow:
+        0 0 5px
+        rgba(94, 230, 138, 0.10);
+}
+
+
+
+/* =====================================
+   TERMINAL LINES
+===================================== */
+
+.terminal-line {
+
+    margin: 4px 0;
+
+
+    line-height: 1.5;
+
+
+    font-family:
+        "Courier New",
+        monospace;
+
+
+    word-break: break-word;
+}
+
+
+
+/* PROMPT */
+
+.terminal-prompt {
+
+    color: #5ee68a;
+
+    white-space: nowrap;
+}
+
+
+
+/* SYSTEM TEXT */
+
+.system-text {
+
+    color: #687068;
+}
+
+
+
+/* QUOTE */
+
+.quote-text {
+
+    color: #abb5ad;
+
+    font-style: italic;
+
+
+    margin-left: 8px;
+}
+
+
+
+/* ERRORS */
+
+.error-text {
+
+    color: #d16464;
+}
+
+
+
+/* MUSIC LIST */
+
+.music-list {
+
+    color: #8c998e;
+
+    margin-left: 8px;
+}
+
+
+
+/* =====================================
+   TERMINAL INPUT
+===================================== */
+
+.terminal-input-line {
+
+    display: flex;
+
+    align-items: center;
+
+
+    margin-top: 7px;
+
+
+    font-family:
+        "Courier New",
+        monospace;
+}
+
+
+#terminal-input {
+
+    flex: 1;
+
+    min-width: 0;
+
+
+    margin-left: 7px;
+
+
+    padding: 0;
+
+
+    border: none;
+
+    outline: none;
+
+
+    background: transparent;
+
+
+    color: #ddd;
+
+
+    font-family:
+        "Courier New",
+        monospace;
+
+
+    font-size: 12px;
+
+
+    /* hide normal cursor */
+
+    caret-color: transparent;
+}
+
+
+
+/* =====================================
+   BLINKING CURSOR
+===================================== */
+
+.terminal-cursor {
+
+    color: #5ee68a;
+
+
+    font-size: 12px;
+
+
+    animation:
+        blinkCursor
+        0.8s
+        steps(1)
+        infinite;
+}
+
+
+@keyframes blinkCursor {
+
+    0%,
+    45% {
+
+        opacity: 1;
+    }
+
+
+    46%,
+    100% {
+
+        opacity: 0;
+    }
+
+}
+
+
+
+/* =====================================
+   TERMINAL SCROLLBAR
+===================================== */
+
+.terminal-screen::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+.terminal-screen::-webkit-scrollbar-track {
+
+    background-color: #101210;
+}
+
+
+.terminal-screen::-webkit-scrollbar-thumb {
+
+    background-color: #333;
+
+    border-radius: 10px;
+}
+
+
+.terminal-screen::-webkit-scrollbar-thumb:hover {
+
+    background-color: #444;
+}
+
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+
+    header {
+
+        padding: 15px 20px;
+    }
+
+
+    header h2 {
+
+        font-size: 17px;
+    }
+
+
+    nav a {
+
+        margin-left: 10px;
+
+        font-size: 13px;
+    }
+
+
+
+    /* MAIN */
+
+    .portfolio {
+
+        flex-direction: column;
+
+
+        margin-top: 25px;
+
+
+        padding: 0 15px;
+
+
+        gap: 25px;
+    }
+
+
+
+    /* PROFILE */
+
+    .profile {
+
+        width: 100%;
+    }
+
+
+    .profile-picture {
+
+        width: 150px;
+
+        height: 150px;
+    }
+
+
+
+    /* TERMINAL */
+
+    .terminal-section {
+
+        right: 10px;
+
+        bottom: 10px;
+
+
+        width: calc(100% - 20px);
+    }
+
+
+    .terminal-screen {
+
+        height: 180px;
+
+        font-size: 11px;
+    }
+
+
+    #terminal-input {
+
+        font-size: 11px;
+    }
+
+
+    .terminal-cursor {
+
+        font-size: 11px;
+    }
+
+}
+/* =========================
+   CRT SCREEN EFFECT
+========================= */
+
+/* scanlines */
+body::before {
+    content: "";
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.10) 3px,
+        rgba(0, 0, 0, 0.10) 4px
+    );
+
+    opacity: 0.35;
+}
+
+
+/* very subtle screen flicker */
+body::after {
+    content: "";
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    background: rgba(255, 255, 255, 0.015);
+
+    animation: crtFlicker 0.15s infinite;
+}
+
+
+@keyframes crtFlicker {
+
+    0% {
+        opacity: 0.08;
+    }
+
+    50% {
+        opacity: 0.02;
+    }
+
+    100% {
+        opacity: 0.06;
+    }
+}
+/* =========================
+   VOID GLITCH TITLE
+========================= */
+
+.void-glitch {
+    position: relative;
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    font-family: "Courier New", monospace;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #ddd;
+
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.12),
+        0 0 12px rgba(94, 230, 138, 0.08);
+
+    animation: voidMainGlitch 4s infinite;
+}
+
+
+/* glitch copies */
+
+.void-glitch::before,
+.void-glitch::after {
+    content: attr(data-text);
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+
+/* green copy */
+
+.void-glitch::before {
+    color: #5ee68a;
+
+    text-shadow:
+        -2px 0 #5ee68a;
+
+    animation: voidGreenGlitch 4s infinite;
+}
+
+
+/* red copy */
+
+.void-glitch::after {
+    color: #ff6868;
+
+    text-shadow:
+        2px 0 #ff6868;
+
+    animation: voidRedGlitch 4s infinite;
+}
+
+
+/* =========================
+   MAIN MOVEMENT
+========================= */
+
+@keyframes voidMainGlitch {
+
+    0%,
+    88%,
+    91%,
+    94%,
+    100% {
+        transform: translate(0);
+    }
+
+    89% {
+        transform: translate(-2px, 0);
+    }
+
+    90% {
+        transform: translate(2px, 1px);
+    }
+
+    92% {
+        transform: translate(1px, -1px);
+    }
+
+    93% {
+        transform: translate(-1px, 1px);
+    }
+}
+
+
+/* =========================
+   GREEN GLITCH
+========================= */
+
+@keyframes voidGreenGlitch {
+
+    0%,
+    88%,
+    94%,
+    100% {
+        opacity: 0;
+        transform: translate(0);
+        clip-path: inset(0 0 0 0);
+    }
+
+    89% {
+        opacity: 0.7;
+
+        transform: translate(-3px, 0);
+
+        clip-path: inset(
+            10% 0 60% 0
+        );
+    }
+
+    90% {
+        opacity: 0.5;
+
+        transform: translate(2px, 0);
+
+        clip-path: inset(
+            55% 0 15% 0
+        );
+    }
+
+    92% {
+        opacity: 0.7;
+
+        transform: translate(-2px, 1px);
+
+        clip-path: inset(
+            30% 0 35% 0
+        );
+    }
+
+    93% {
+        opacity: 0.3;
+
+        transform: translate(1px, 0);
+
+        clip-path: inset(
+            70% 0 5% 0
+        );
+    }
+}
+
+
+/* =========================
+   RED GLITCH
+========================= */
+
+@keyframes voidRedGlitch {
+
+    0%,
+    88%,
+    94%,
+    100% {
+        opacity: 0;
+        transform: translate(0);
+        clip-path: inset(0 0 0 0);
+    }
+
+    89% {
+        opacity: 0.5;
+
+        transform: translate(3px, 1px);
+
+        clip-path: inset(
+            65% 0 10% 0
+        );
+    }
+
+    90% {
+        opacity: 0.7;
+
+        transform: translate(-2px, 0);
+
+        clip-path: inset(
+            20% 0 50% 0
+        );
+    }
+
+    92% {
+        opacity: 0.4;
+
+        transform: translate(3px, -1px);
+
+        clip-path: inset(
+            45% 0 25% 0
+        );
+    }
+
+    93% {
+        opacity: 0.6;
+
+        transform: translate(-1px, 0);
+
+        clip-path: inset(
+            5% 0 75% 0
+        );
+    }
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.void-glitch:hover {
+    color: #5ee68a;
+
+    text-shadow:
+        0 0 5px rgba(94, 230, 138, 0.5),
+        0 0 15px rgba(94, 230, 138, 0.25);
+
+    cursor: default;
+}
+/* =========================
+   MUSIC VISUALIZER
+========================= */
+
+.now-playing-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+
+.now-playing-row .now-playing {
+    margin: 0;
+}
+
+
+.visualizer {
+    height: 15px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 2px;
+}
+
+
+.visualizer span {
+    width: 2px;
+    height: 3px;
+
+    background-color: #5ee68a;
+
+    border-radius: 2px;
+
+    opacity: 0.4;
+}
+
+
+/* animate only while music is playing */
+
+.visualizer.playing span {
+    opacity: 0.8;
+
+    animation: musicBar 0.7s ease-in-out infinite alternate;
+}
+
+
+.visualizer.playing span:nth-child(1) {
+    animation-duration: 0.45s;
+}
+
+
+.visualizer.playing span:nth-child(2) {
+    animation-duration: 0.7s;
+}
+
+
+.visualizer.playing span:nth-child(3) {
+    animation-duration: 0.55s;
+}
+
+
+.visualizer.playing span:nth-child(4) {
+    animation-duration: 0.8s;
+}
+
+
+.visualizer.playing span:nth-child(5) {
+    animation-duration: 0.6s;
+}
+
+
+@keyframes musicBar {
+
+    from {
+        height: 3px;
+    }
+
+    to {
+        height: 14px;
+    }
+
+}
+/* =========================
+   MUSIC LYRICS
+========================= */
+
+/* =========================
+   LYRICS
+========================= */
+
+.lyric-box {
+
+    margin-top: 12px;
+
+    padding-top: 10px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+
+    overflow: hidden;
+}
+
+
+#music-lyric {
+
+    margin: 0;
+
+    color: #666;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    font-style: italic;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.lyric-change {
+
+    animation:
+        lyricFade
+        0.4s ease;
+}
+
+
+@keyframes lyricFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(3px);
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
