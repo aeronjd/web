@@ -37,6 +37,20 @@ const visualizer =
 const musicLyric =
     document.getElementById("music-lyric");
 
+    const previousLyric =
+    document.getElementById(
+        "previous-lyric"
+    );
+
+
+const nextLyric =
+    document.getElementById(
+        "next-lyric"
+    );
+
+
+let currentLyricIndex = -1;
+
 let currentLyrics = [];
 
 
@@ -205,7 +219,7 @@ function parseLRC(text) {
 async function loadLyrics(file) {
 
     currentLyrics = [];
-
+    currentLyricIndex = -1;
 
     if (!musicLyric) {
 
@@ -293,7 +307,6 @@ async function loadLyrics(file) {
 function updateLyrics() {
 
     if (
-        !musicLyric ||
         currentLyrics.length === 0
     ) {
 
@@ -301,14 +314,10 @@ function updateLyrics() {
     }
 
 
-    let activeLyric =
-        "...";
+    let activeIndex = -1;
 
 
-    /*
-    Go through timestamps until we
-    reach the current part of the song.
-    */
+    /* FIND CURRENT LYRIC */
 
     for (
         let i = 0;
@@ -321,8 +330,7 @@ function updateLyrics() {
             currentLyrics[i].time
         ) {
 
-            activeLyric =
-                currentLyrics[i].text;
+            activeIndex = i;
 
         }
 
@@ -335,37 +343,112 @@ function updateLyrics() {
     }
 
 
+    /* BEFORE FIRST LYRIC */
+
+    if (activeIndex === -1) {
+
+        previousLyric.textContent =
+            "";
+
+
+        musicLyric.textContent =
+            "...";
+
+
+        nextLyric.textContent =
+            currentLyrics[0].text;
+
+
+        return;
+    }
+
+
     /*
-    Only animate when the lyric
-    actually changes.
+    Don't redraw everything constantly.
+    Only update when lyric changes.
     */
 
     if (
-        musicLyric.textContent !==
-        activeLyric
+        activeIndex ===
+        currentLyricIndex
     ) {
 
-        musicLyric.textContent =
-            activeLyric;
+        return;
+    }
 
 
-        musicLyric.classList.remove(
-            "lyric-change"
-        );
+    currentLyricIndex =
+        activeIndex;
 
 
-        /*
-        Restart CSS animation
-        */
 
-        void musicLyric.offsetWidth;
+    /* PREVIOUS LYRIC */
 
+    if (
+        activeIndex > 0
+    ) {
 
-        musicLyric.classList.add(
-            "lyric-change"
-        );
+        previousLyric.textContent =
+            currentLyrics[
+                activeIndex - 1
+            ].text;
 
     }
+
+    else {
+
+        previousLyric.textContent =
+            "";
+
+    }
+
+
+
+    /* CURRENT LYRIC */
+
+    musicLyric.textContent =
+        currentLyrics[
+            activeIndex
+        ].text;
+
+
+
+    /* NEXT LYRIC */
+
+    if (
+        activeIndex <
+        currentLyrics.length - 1
+    ) {
+
+        nextLyric.textContent =
+            currentLyrics[
+                activeIndex + 1
+            ].text;
+
+    }
+
+    else {
+
+        nextLyric.textContent =
+            "";
+
+    }
+
+
+
+    /* RESTART ANIMATION */
+
+    musicLyric.classList.remove(
+        "lyric-change"
+    );
+
+
+    void musicLyric.offsetWidth;
+
+
+    musicLyric.classList.add(
+        "lyric-change"
+    );
 
 }
 
@@ -729,7 +812,7 @@ const quotes = [
 
     "silence is also an answer.",
 
-    "we are all temporary files.",
+    "we are all temporary.",
 
     "the night knows things the morning forgets.",
 
@@ -737,7 +820,7 @@ const quotes = [
 
     "everything eventually becomes a memory.",
 
-    "404: motivation not found.",
+    "such is life.",
 
     "existing is weird. anyway...",
 
@@ -1514,3 +1597,48 @@ loadLyrics(
 
 
 startTerminal();
+
+const terminalSection =
+    document.querySelector(
+        ".terminal-section"
+    );
+
+
+const terminalMinimize =
+    document.getElementById(
+        "terminal-minimize"
+    );
+
+
+terminalMinimize.addEventListener(
+    "click",
+    function () {
+
+        terminalSection.classList.toggle(
+            "minimized"
+        );
+
+
+        if (
+            terminalSection.classList.contains(
+                "minimized"
+            )
+        ) {
+
+            terminalMinimize.textContent =
+                "+";
+
+        }
+
+        else {
+
+            terminalMinimize.textContent =
+                "_";
+
+
+            terminalInput.focus();
+
+        }
+
+    }
+);

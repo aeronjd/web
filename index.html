@@ -221,9 +221,23 @@
 
 <div class="lyric-box">
 
-    <p id="music-lyric">
-        loading lyrics...
+    <p
+        class="lyric previous-lyric"
+        id="previous-lyric">
     </p>
+
+    <p
+        class="lyric current-lyric"
+        id="music-lyric">
+        ...
+    </p>
+
+    <p
+        class="lyric next-lyric"
+        id="next-lyric">
+    </p>
+
+</div>
 
 </div>
                 <!-- AUDIO -->
@@ -420,27 +434,35 @@
 
         <!-- TERMINAL HEADER -->
 
-        <div class="terminal-header">
+<div class="terminal-header">
+
+    <div class="terminal-title">
+
+        <span class="terminal-dot"></span>
+
+        <span>
+            void@rene
+        </span>
+
+    </div>
 
 
-            <div class="terminal-title">
+    <div class="terminal-controls">
 
-                <span class="terminal-dot"></span>
+        <span>
+            terminal
+        </span>
 
-                <span>
-                    void@rene
-                </span>
+        <button
+            id="terminal-minimize"
+            class="terminal-minimize"
+            type="button">
+            _
+        </button>
 
-            </div>
+    </div>
 
-
-            <span>
-                terminal
-            </span>
-
-
-        </div>
-
+</div>
 
 
         <!-- TERMINAL SCREEN -->
