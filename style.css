@@ -15,7 +15,7 @@ html {
 body {
 
     background-color: #181818;
-
+    zoom: 1.1;
     font-family: Arial, sans-serif;
 
     margin: 0;
@@ -712,10 +712,10 @@ li {
 
 .terminal-screen {
 
-    padding: 17px;
+    padding: 15px;
 
 
-    height: 250px;
+    height: 230px;
 
 
     overflow-y: auto;
@@ -726,7 +726,7 @@ li {
         monospace;
 
 
-    font-size: 15px;
+    font-size: 13px;
 
 
     color: #a8b5a8;
@@ -1452,7 +1452,7 @@ body::after {
 .lyric {
     margin: 4px 0;
 
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.5;
 
