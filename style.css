@@ -1433,28 +1433,25 @@ body::after {
 ========================= */
 
 .lyric-box {
-
     margin-top: 12px;
 
     padding-top: 10px;
 
-    border-top:
-        1px solid
+    border-top: 1px solid
         rgba(255, 255, 255, 0.06);
 
-    overflow: hidden;
+    width: 100%;
+
+    min-height: 28px;
 }
 
 
 #music-lyric {
-
     margin: 0;
 
     color: #666;
 
-    font-family:
-        "Courier New",
-        monospace;
+    font-family: "Courier New", monospace;
 
     font-size: 9px;
 
@@ -1462,11 +1459,16 @@ body::after {
 
     letter-spacing: 0.5px;
 
-    white-space: nowrap;
+    line-height: 1.5;
 
-    overflow: hidden;
+    /* allow lyric to continue next line */
+    white-space: normal;
 
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+
+    word-wrap: break-word;
+
+    overflow: visible;
 }
 
 
