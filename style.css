@@ -954,10 +954,10 @@ li {
 
 
 /* =====================================
-   MOBILE
+   MOBILE (disabled to keep the desktop layout on every screen)
 ===================================== */
 
-@media (max-width: 700px) {
+@media not all {
 
 
     header {
@@ -2142,8 +2142,8 @@ body::before {
     inset: 0;
 
     background-image: url("assets/images/bg1.png"); /* change to your image file name */
-    background-size: 100%;
-    background-position: 52% 67%;
+    background-size: 100% auto;
+    background-position: center top;
     background-repeat: no-repeat;
 
     filter: blur(0.5px);
@@ -2172,3 +2172,11 @@ main,
     z-index: 1;
 }
 
+@media (max-width: 1200px) {
+
+    body::before {
+        background-size: cover;
+        background-position: center;
+    }
+
+}
