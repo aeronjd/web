@@ -64,21 +64,21 @@ const playlist = [
     {
         title: "Apocalypse",
         artist: "Cigarettes After Sex",
-        audio: "apocal.mp3",
-        cover: "cgr.jpg",
+        audio: "assets/audio/apocal.mp3",
+        cover: "assets/images/cgr.jpg",
 
         /* NEW */
-        lyrics: "apocal.lrc"
+        lyrics: "assets/lyrics/apocal.lrc"
     },
 
     {
         title: "Let Down",
         artist: "Radiohead",
-        audio: "letdown.mp3",
-        cover: "ltdn.jpg",
+        audio: "assets/audio/letdown.mp3",
+        cover: "assets/images/ltdn.jpg",
 
         /* NEW */
-        lyrics: "ltdn.lrc"
+        lyrics: "assets/lyrics/ltdn.lrc"
     },
 
     {

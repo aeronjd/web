@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID.CODE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-dot"></span>
+            <div>
+                <h1>VOID.CODE</h1>
+                <p>HTML // CSS // JAVASCRIPT</p>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <label class="auto-live">
+                <input type="checkbox" id="auto-live" checked>
+                <span>AUTO LIVE</span>
+            </label>
+            <button type="button" id="run-button">[ RUN ]</button>
+            <button type="button" id="save-link-button">[ SAVE LINK ]</button>
+            <button type="button" id="copy-link-button">[ COPY LINK ]</button>
+            <button type="button" id="download-button">[ DOWNLOAD HTML ]</button>
+        </div>
+    </header>
+
+    <main class="workspace">
+        <section class="editor-panel">
+            <div class="panel-header">
+                <div class="file-tabs" role="tablist" aria-label="Code files">
+                    <button class="file-tab active" type="button" data-editor="html" role="tab" aria-selected="true">index.html</button>
+                    <button class="file-tab" type="button" data-editor="css" role="tab" aria-selected="false">style.css</button>
+                    <button class="file-tab" type="button" data-editor="js" role="tab" aria-selected="false">script.js</button>
+                </div>
+
+                <div class="editor-actions">
+                    <button type="button" id="add-file-button">+ NEW FILE</button>
+                    <button type="button" id="rename-button">RENAME</button>
+                    <button type="button" id="delete-file-button">DELETE FILE</button>
+                    <button type="button" id="wrap-button" aria-pressed="false">WRAP: OFF</button>
+                    <button type="button" id="clear-button">CLEAR</button>
+                    <button type="button" id="reset-button">RESET</button>
+                </div>
+            </div>
+
+            <details class="syntax-guide">
+                <summary>Syntax color guide</summary>
+                <div class="syntax-legend">
+                    <span class="token-keyword">Pink · tags, keywords &amp; operators</span>
+                    <span class="token-property">Cyan · attributes &amp; properties</span>
+                    <span class="token-function">Green · selectors &amp; functions</span>
+                    <span class="token-string">Yellow · quoted text</span>
+                    <span class="token-number">Purple · numbers, colors &amp; booleans</span>
+                    <span class="token-value">Orange · CSS values</span>
+                    <span class="token-comment">Gray · comments</span>
+                </div>
+                <p>Colors help you recognize code parts. Pink is not an error; check the console for runtime errors.</p>
+            </details>
+
+            <div class="editor-wrap">
+                <div class="code-editor active" data-editor-panel="html">
+                    <div class="line-numbers" aria-hidden="true"></div>
+                    <pre class="highlighting" aria-hidden="true"><code class="language-html"></code></pre>
+                    <textarea id="html-editor" data-language="html" spellcheck="false" autocomplete="off" aria-label="HTML editor"></textarea>
+                </div>
+                <div class="code-editor" data-editor-panel="css">
+                    <div class="line-numbers" aria-hidden="true"></div>
+                    <pre class="highlighting" aria-hidden="true"><code class="language-css"></code></pre>
+                    <textarea id="css-editor" data-language="css" spellcheck="false" autocomplete="off" aria-label="CSS editor"></textarea>
+                </div>
+                <div class="code-editor" data-editor-panel="js">
+                    <div class="line-numbers" aria-hidden="true"></div>
+                    <pre class="highlighting" aria-hidden="true"><code class="language-javascript"></code></pre>
+                    <textarea id="js-editor" data-language="javascript" spellcheck="false" autocomplete="off" aria-label="JavaScript editor"></textarea>
+                </div>
+            </div>
+
+            <div class="editor-footer">
+                <span id="active-file-label">index.html</span>
+                <span class="shortcut-help">CTRL+ENTER RUN // CTRL+S SAVE // TAB INDENTS // F2 RENAME</span>
+            </div>
+        </section>
+
+        <section class="preview-panel">
+            <div class="panel-header">
+                <div>
+                    <span class="status-dot"></span>
+                    <span class="panel-title">LIVE.PREVIEW</span>
+                </div>
+                <label class="preview-page">PAGE <select id="preview-page" aria-label="HTML page to preview"></select></label>
+                <span id="preview-status">READY</span>
+            </div>
+
+            <p class="preview-help">Choose an HTML page. All CSS and JavaScript files are included automatically, in tab order.</p>
+
+            <div class="preview-wrap">
+                <iframe id="preview-frame" title="Live preview" sandbox="allow-scripts allow-forms"></iframe>
+            </div>
+
+            <div class="console-panel">
+                <div class="console-header">
+                    <span>CONSOLE.LOG</span>
+                    <button type="button" id="clear-console-button">CLEAR</button>
+                </div>
+
+                <div id="console-output" class="console-output" aria-live="polite">
+                    <div class="console-line system">&gt; preview console ready.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="statusbar">
+        <span id="save-status">LOCAL AUTOSAVE // ENABLED</span>
+        <span>VOID.CODE v1.0</span>
+    </footer>
+
+    <script src="project.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
