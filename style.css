@@ -2141,7 +2141,7 @@ body::before {
     position: fixed;
     inset: 0;
 
-    background-image: url("bg2.png"); /* change to your image file name */
+    background-image: url("/assets/images/bg.png"); /* change to your image file name */
     background-size: 115%;
     background-position: 52% 67%;
     background-repeat: no-repeat;
