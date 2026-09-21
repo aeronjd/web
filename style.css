@@ -43,9 +43,15 @@ header {
     justify-content: space-between;
 
     align-items: center;
+    
 }
 
+header {
+    background: rgba(24, 24, 24, 0.1) !important;
 
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
 header h2 {
 
     margin: 0;
@@ -231,11 +237,11 @@ nav a:hover {
 
 .content section {
 
-    background-color: #242424;
+    background: rgba(36, 36, 36, 0.25);
 
 
     padding: 20px;
-
+    font-size: 14px;
     margin-bottom: 20px;
 
 
@@ -343,7 +349,7 @@ li {
     padding: 15px;
 
 
-    background-color: #202020;
+    background: rgba(36, 36, 36, 0.25);
 
 
     border: 1px solid #333;
@@ -1091,7 +1097,7 @@ body::after {
 
     background: rgba(255, 255, 255, 0.015);
 
-    animation: crtFlicker 0.15s infinite;
+    animation: crtFlicker 0.65s infinite;
 }
 
 
@@ -1452,7 +1458,7 @@ body::after {
 .lyric {
     margin: 4px 0;
 
-    font-size: 14px;
+    font-size: 13px;
 
     line-height: 1.5;
 
@@ -1609,29 +1615,34 @@ body::after {
 
 
 .new-quote {
-    margin-top: 15px;
+    margin-top: 18px;
+    padding: 7px 10px;
 
-    padding: 0;
+    background: rgba(94, 230, 138, 0.04);
+    border: 1px solid #444;
 
-    background: transparent;
+    color: #777;
 
-    border: none;
-
-    color: #555;
-
-    font-family:
-        "Courier New",
-        monospace;
-
+    font-family: "Courier New", monospace;
     font-size: 9px;
+    letter-spacing: 1px;
 
     cursor: pointer;
-}
 
+    transition: 0.2s;
+}
 
 .new-quote:hover {
     color: #5ee68a;
+    border-color: #5ee68a;
+    background: rgba(94, 230, 138, 0.08);
 }
+
+.new-quote:active {
+    transform: translateY(1px);
+    background: rgba(94, 230, 138, 0.15);
+}
+
 .movie-info {
     color: #5ee68a;
 
@@ -2076,7 +2087,7 @@ body::after {
 
     animation:
         rememberFlicker
-        0.4s
+        0.9s
         infinite;
 }
 
@@ -2104,3 +2115,60 @@ body::after {
     }
 
 }
+.japanese-random {
+    font-family: "Courier New", monospace;
+    color: #5ee68a;
+    font-size: 10px;
+    letter-spacing: 4px;
+    line-height: 1.8;
+    word-break: break-all;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* background image layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("bg2.png"); /* change to your image file name */
+    background-size: 115%;
+    background-position: 52% 67%;
+    background-repeat: no-repeat;
+
+    filter: blur(0.5px);
+
+    z-index: -2;
+}
+
+/* dark overlay so text is readable */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: -1;
+}
+
+/* keep your real content above background */
+header,
+main,
+.portfolio,
+.content,
+.profile {
+    position: relative;
+    z-index: 1;
+}
+

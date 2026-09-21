@@ -2668,3 +2668,91 @@ newQuoteButton.addEventListener(
     "click",
     randomMovieQuote
 );
+const japaneseRandom =
+    document.getElementById("japanese-random");
+
+const japaneseChars =
+    "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+
+// Starting characters
+let characters = [];
+
+for (let i = 0; i < 35; i++) {
+
+    characters.push(
+        japaneseChars[
+            Math.floor(
+                Math.random() *
+                japaneseChars.length
+            )
+        ]
+    );
+}
+
+// Display first version
+japaneseRandom.textContent =
+    characters.join("");
+
+
+// Change ONE character at a time
+function animateJapanese() {
+
+    const position =
+        Math.floor(
+            Math.random() *
+            characters.length
+        );
+
+    characters[position] =
+        japaneseChars[
+            Math.floor(
+                Math.random() *
+                japaneseChars.length
+            )
+        ];
+
+    japaneseRandom.textContent =
+        characters.join("");
+}
+
+
+// Change one every 100ms
+setInterval(animateJapanese, 30);
+
+window.addEventListener("load", async function () {
+
+    try {
+
+        await music.play();
+
+    } catch {
+
+        document.addEventListener(
+            "click",
+            startMusicOnce
+        );
+
+        document.addEventListener(
+            "touchstart",
+            startMusicOnce
+        );
+
+    }
+
+});
+
+
+function startMusicOnce() {
+
+    music.play();
+
+    document.removeEventListener(
+        "click",
+        startMusicOnce
+    );
+
+    document.removeEventListener(
+        "touchstart",
+        startMusicOnce
+    );
+}
