@@ -47,7 +47,7 @@ header {
 }
 
 header {
-    background: rgba(24, 24, 24, 0.1) !important;
+    background: rgba(24, 24, 24, 0.2) !important;
 
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -237,7 +237,7 @@ nav a:hover {
 
 .content section {
 
-    background: rgba(36, 36, 36, 0.25);
+    background: rgba(36, 36, 36, 0.65);
 
 
     padding: 20px;
@@ -349,7 +349,7 @@ li {
     padding: 15px;
 
 
-    background: rgba(36, 36, 36, 0.25);
+    background: rgba(36, 36, 36, 0.65);
 
 
     border: 1px solid #333;
@@ -2141,8 +2141,8 @@ body::before {
     position: fixed;
     inset: 0;
 
-    background-image: url("bg2.png"); /* change to your image file name */
-    background-size: 115%;
+    background-image: url("assets/images/bg1.png"); /* change to your image file name */
+    background-size: 100%;
     background-position: 52% 67%;
     background-repeat: no-repeat;
 
