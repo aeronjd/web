@@ -361,6 +361,19 @@ $("#toggle-console-button").onclick = event => {
 };
 $("#preview-page").onchange = event => openPreview(event.target.value);
 $("#run-button").onclick = runPreview; $("#rename-button").onclick = renameActive; $("#clear-console-button").onclick = () => consoleOutput.innerHTML = "";
+$("#paste-button").onclick = async () => {
+    const editor = activeInput();
+    try {
+        const pastedText = await navigator.clipboard.readText();
+        editor.setRangeText(pastedText, editor.selectionStart, editor.selectionEnd, "end");
+        editorChanged(editor);
+        editor.focus();
+        saveStatus.textContent = "PASTED // LOCAL AUTOSAVE SAVED";
+    } catch {
+        editor.focus();
+        saveStatus.textContent = "PASTE BLOCKED // PRESS CTRL+V";
+    }
+};
 $("#clear-button").onclick = () => { const editor = activeInput(); editor.value = ""; editorChanged(editor); editor.focus(); };
 $("#reset-button").onclick = () => { if (confirm("Reset the entire project?")) { setProject(defaults); saveLocal(); runPreview(); } };
 $("#wrap-button").onclick = event => { wrapped = !wrapped; document.querySelectorAll(".code-editor").forEach(panel => panel.classList.toggle("wrap", wrapped)); event.currentTarget.textContent = `WRAP: ${wrapped ? "ON" : "OFF"}`; event.currentTarget.setAttribute("aria-pressed", wrapped); refreshAll(); };

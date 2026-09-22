@@ -17,12 +17,12 @@
     --editor-font-size: 15px;
     --editor-line-height: 24px;
     --code-font: Consolas, "Cascadia Code", "SFMono-Regular", Menlo, "Liberation Mono", monospace;
-    --syntax-pink: #ff79a8;
-    --syntax-blue: #78dce8;
-    --syntax-yellow: #ffd866;
-    --syntax-purple: #ab9df2;
-    --syntax-green: #a9dc76;
-    --syntax-orange: #fc9867;
+    --syntax-pink: #ff86b3;
+    --syntax-blue: #88e7f2;
+    --syntax-yellow: #ffe078;
+    --syntax-purple: #bdaaff;
+    --syntax-green: #b8ea83;
+    --syntax-orange: #ffa878;
     --green: #5ee68a;
     --red: #ff6868;
 }
@@ -244,7 +244,7 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .editor-actions {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 8px;
     width: 100%;
 }
