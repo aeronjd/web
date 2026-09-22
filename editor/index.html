@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200">
     <title>VOID.CODE</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,8 +22,7 @@
                 <span>AUTO LIVE</span>
             </label>
             <button type="button" id="run-button">[ RUN ]</button>
-            <button type="button" id="save-link-button">[ SAVE LINK ]</button>
-            <button type="button" id="copy-link-button">[ COPY LINK ]</button>
+            <button type="button" id="save-code-button">SAVE CODE</button>
             <button type="button" id="download-button">[ DOWNLOAD HTML ]</button>
         </div>
     </header>
@@ -31,16 +30,20 @@
     <main class="workspace">
         <section class="editor-panel">
             <div class="panel-header">
-                <div class="file-tabs" role="tablist" aria-label="Code files">
-                    <button class="file-tab active" type="button" data-editor="html" role="tab" aria-selected="true">index.html</button>
-                    <button class="file-tab" type="button" data-editor="css" role="tab" aria-selected="false">style.css</button>
-                    <button class="file-tab" type="button" data-editor="js" role="tab" aria-selected="false">script.js</button>
+                <div class="file-tabbar">
+                    <div class="file-tabs" role="tablist" aria-label="Code files"></div>
+                    <details class="file-create">
+                        <summary aria-label="Add file" title="Add file">+</summary>
+                        <div class="file-create-menu">
+                            <button type="button" data-new-file="html">New HTML file</button>
+                            <button type="button" data-new-file="css">New CSS file</button>
+                            <button type="button" data-new-file="js">New JS file</button>
+                        </div>
+                    </details>
                 </div>
 
                 <div class="editor-actions">
-                    <button type="button" id="add-file-button">+ NEW FILE</button>
                     <button type="button" id="rename-button">RENAME</button>
-                    <button type="button" id="delete-file-button">DELETE FILE</button>
                     <button type="button" id="wrap-button" aria-pressed="false">WRAP: OFF</button>
                     <button type="button" id="clear-button">CLEAR</button>
                     <button type="button" id="reset-button">RESET</button>
@@ -85,7 +88,7 @@
             </div>
         </section>
 
-        <section class="preview-panel">
+        <section class="preview-panel console-collapsed">
             <div class="panel-header">
                 <div>
                     <span class="status-dot"></span>
@@ -95,7 +98,9 @@
                 <span id="preview-status">READY</span>
             </div>
 
-            <p class="preview-help">Choose an HTML page. All CSS and JavaScript files are included automatically, in tab order.</p>
+            <div class="preview-navigation">
+                <div id="preview-tabs" role="tablist" aria-label="Open preview pages"></div>
+            </div>
 
             <div class="preview-wrap">
                 <iframe id="preview-frame" title="Live preview" sandbox="allow-scripts allow-forms"></iframe>
@@ -104,10 +109,13 @@
             <div class="console-panel">
                 <div class="console-header">
                     <span>CONSOLE.LOG</span>
-                    <button type="button" id="clear-console-button">CLEAR</button>
+                    <div class="console-actions">
+                        <button type="button" id="clear-console-button">CLEAR</button>
+                        <button type="button" id="toggle-console-button" aria-expanded="false" aria-controls="console-output">EXPAND +</button>
+                    </div>
                 </div>
 
-                <div id="console-output" class="console-output" aria-live="polite">
+                <div id="console-output" class="console-output" aria-live="polite" hidden>
                     <div class="console-line system">&gt; preview console ready.</div>
                 </div>
             </div>
@@ -119,7 +127,22 @@
         <span>VOID.CODE v1.0</span>
     </footer>
 
+    <dialog id="save-dialog" aria-labelledby="save-dialog-title" aria-describedby="save-dialog-description">
+        <div class="save-dialog-header">
+            <h2 id="save-dialog-title">Your code link is ready</h2>
+            <button type="button" id="close-save-button" aria-label="Close save popup">Close</button>
+        </div>
+        <p id="save-dialog-description">This link contains all your files as they are now. Save again after making changes to get an updated link.</p>
+        <label for="saved-code-link">Code link</label>
+        <div class="save-link-row">
+            <input id="saved-code-link" type="text" readonly spellcheck="false" aria-describedby="copy-status">
+            <button type="button" id="copy-saved-link-button">Copy</button>
+        </div>
+        <p id="copy-status" role="status" aria-live="polite"></p>
+    </dialog>
+
     <script src="project.js"></script>
+    <script src="preview-navigation.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
